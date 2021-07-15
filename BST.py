@@ -23,7 +23,7 @@ class BST:
         p = None
         v = Node(key)
         while v != None:
-            if v.key == key:
+            if p == None or v.key == key:
                 return v
             elif v.key < key: # 찾는 키값이 v의 키값보다 크기 때문에 오른쪽 노드에서 확인
                 p = v
