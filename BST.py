@@ -80,5 +80,5 @@ class BST:
                     c.parent = None
 
         self.size -= 1 # 노드를 삭제했으므로 사이즈 감소
-        return self
+        return c
 
