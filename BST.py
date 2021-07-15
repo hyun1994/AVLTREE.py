@@ -10,7 +10,7 @@ class BST:
         return self.size
 
     def __iter__(self):
-        return self.root.__init__()
+        return
 
     def height(self, key):
         if key == None:
