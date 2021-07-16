@@ -21,7 +21,7 @@ class BST:
         if self.root == None: # root에 None일때 insert되는 key값이 root값으로 들어감
             self.root = Node(key)
             v = self.root
-            return v
+            return v.key
         else:
             v = self.root
             while True:
