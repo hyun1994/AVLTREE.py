@@ -38,7 +38,34 @@ class BST:
                     else:
                         v = v.right
             return v.key
-
+        
+    def search(self, key):
+        v = Node(key)
+        if self.root == None: #
+            return 
+        else:
+            v = self.root
+            while True:
+                if key == v.key:
+                    return v.key
+                else:
+                    if key < v.key:
+                        if v == v.left:
+                            return v.left
+                        elif v.left == None:
+                            return 'Not Found'
+                        else:
+                            v = v.left
+                            return v.left
+                    else:
+                        if key == v.right:
+                            return v.right
+                        elif v.right == None:
+                            return 'Not Found'
+                        else:
+                            v = v.right
+                            return v.right
+                        
     def delete(self, x): # merging방법= 자식노드를 왼쪽과 오른쪽으로 병합해서 삭제할 노드위치로 옮긴 후 진행
         px = x.parent
         a = x.left # 삭제할 X노드의 왼쪽 자식노드
