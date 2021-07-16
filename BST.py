@@ -17,40 +17,26 @@ class BST:
             return 0
         return max(self.height(key.left), self.height(key.right)) + 1 # AVLTree에서는 높이차가 1보다 크면 안되기 때문에 절대값이 1보다 작거나 같아야함
 
-    def find_loc(self, key):
-        p = None
-        v = self.root
-        while v != None:
-            if p == None or v.key == key:
-                v = Node(key)
-                return v
-            elif v.key < key: # 찾는 키값이 v의 키값보다 크기 때문에 오른쪽 노드에서 확인
-                v = v.right
-                return v
-            else: # 찾는 키값이 v의 키값보다 작기 때문에 왼쪽 노드에서 확인
-                v = v.left
-                return v
-    
-    def search(self, key):
-        v = self.find_loc(key)
-        if v != None:
+     def insert(self, key):
+        if self.root == None: # root에 None일때 insert되는 key값이 root값으로 들어감
+            self.root = Node(key)
+            v = self.root
             return v
         else:
-            return None
-
-    def insert(self, key):
-        p = self.search(key)
-        v = Node(key)
-        if p == None:
-            self.root = v
-            p = v.parent
-        else:
-            if p.key >= key: # 부모노드의 키값이 삽입 될 키값보다 크기 때문에 왼쪽노드로 삽입
-                p.left = v
-            else: # 부모노드의 키값이 삽입 될 키값보다 작기 때문에 오른쪽 노드로 삽입
-                p.right = v
-        self.size += 1 # 삽입되었기 때문에 사이즈 증가
-        return v
+            v = self.root
+            while True:
+                if key < v.key: # insert되는 key값이 v.key랑 비교
+                    if v.left == None:
+                        v.left = Node(key)
+                        break
+                    else:
+                        v = v.left
+                else:
+                    if v.right == None:
+                        v.right = Node(key)
+                        break
+                    else:
+                        v = v.right
 
     def delete(self, x): # merging방법= 자식노드를 왼쪽과 오른쪽으로 병합해서 삭제할 노드위치로 옮긴 후 진행
         px = x.parent
