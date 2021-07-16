@@ -24,6 +24,7 @@ class BST:
             return v
         else:
             v = self.root
+            return v
             while True:
                 if key < v.key: # insert되는 key값이 v.key랑 비교
                     if v.left == None:
