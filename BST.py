@@ -19,17 +19,15 @@ class BST:
 
     def find_loc(self, key):
         p = None
-        v = Node(key)
+        v = self.root
         while v != None:
             if p == None or v.key == key:
-                v = self.root
+                v = Node(key)
                 return v
             elif v.key < key: # 찾는 키값이 v의 키값보다 크기 때문에 오른쪽 노드에서 확인
-                p = v
                 v = v.right
                 return v
             else: # 찾는 키값이 v의 키값보다 작기 때문에 왼쪽 노드에서 확인
-                p = v
                 v = v.left
                 return v
     
