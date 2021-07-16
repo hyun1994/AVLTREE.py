@@ -21,7 +21,7 @@ class BST:
         #if self.size == 0:
             #return None
         p = None
-        v = Node(key)
+        v = self.root
         while v != None:
             if p == None or v.key == key:
                 return v
