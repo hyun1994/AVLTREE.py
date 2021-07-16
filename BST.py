@@ -41,7 +41,7 @@ class BST:
         
     def search(self, key):
         v = Node(key)
-        if self.root == None: #
+        if self.root == None: 
             return 
         else:
             v = self.root
@@ -49,7 +49,7 @@ class BST:
                 if key == v.key:
                     return v.key
                 else:
-                    if key < v.key:
+                    if key < v.key: # key값이 v.key값보다 작을때 왼쪽 노드에서 확인
                         if v == v.left:
                             return v.left
                         elif v.left == None:
@@ -57,7 +57,7 @@ class BST:
                         else:
                             v = v.left
                             return v.left
-                    else:
+                    else: # key값이 v.key값보다 클 때 오른쪽 노드에서 확인
                         if key == v.right:
                             return v.right
                         elif v.right == None:
