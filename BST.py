@@ -24,7 +24,6 @@ class BST:
             return v
         else:
             v = self.root
-            return v
             while True:
                 if key < v.key: # insert되는 key값이 v.key랑 비교
                     if v.left == None:
@@ -38,6 +37,7 @@ class BST:
                         break
                     else:
                         v = v.right
+                return v
 
     def delete(self, x): # merging방법= 자식노드를 왼쪽과 오른쪽으로 병합해서 삭제할 노드위치로 옮긴 후 진행
         px = x.parent
