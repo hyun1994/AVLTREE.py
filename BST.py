@@ -55,7 +55,6 @@ class BST:
                             return 'Not Found'
                         else:
                             v = v.left
-                            return v.left
                     else: # key값이 v.key값보다 클 때 오른쪽 노드에서 확인
                         if key == v.right:
                             return v.right
@@ -63,6 +62,5 @@ class BST:
                             return 'Not Found'
                         else:
                             v = v.right
-                            return v.right
 
     
