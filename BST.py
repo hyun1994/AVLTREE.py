@@ -19,13 +19,19 @@ class BST:
 
     def find_loc(self, key):
         p = None
-        v = self.root
-        if p == None or v.key == key:
-            return v
-        elif v.key < key: # 찾는 키값이 v의 키값보다 크기 때문에 오른쪽 노드에서 확인
-            return v.right
-        else: # 찾는 키값이 v의 키값보다 작기 때문에 왼쪽 노드에서 확인
-            return v.left
+        v = Node(key)
+        while v != None:
+            if p == None or v.key == key:
+                v = self.root
+                return v
+            elif v.key < key: # 찾는 키값이 v의 키값보다 크기 때문에 오른쪽 노드에서 확인
+                p = v
+                v = v.right
+                return v
+            else: # 찾는 키값이 v의 키값보다 작기 때문에 왼쪽 노드에서 확인
+                p = v
+                v = v.left
+                return v
     
     def search(self, key):
         v = self.find_loc(key)
@@ -35,7 +41,7 @@ class BST:
             return None
 
     def insert(self, key):
-        p = self.find_loc(key)
+        p = self.search(key)
         v = Node(key)
         if p == None:
             self.root = v
