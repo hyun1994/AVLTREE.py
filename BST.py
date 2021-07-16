@@ -37,7 +37,7 @@ class BST:
                         break
                     else:
                         v = v.right
-                return v
+            return v.key
 
     def delete(self, x): # merging방법= 자식노드를 왼쪽과 오른쪽으로 병합해서 삭제할 노드위치로 옮긴 후 진행
         px = x.parent
