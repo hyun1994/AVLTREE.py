@@ -95,7 +95,7 @@ class BST:
                     self.child.left = None
                 self.parent.right = self.child
 
-            # if node.key == self.root.key: # 오른쪽 서브트리 확인
+            # if node.key == self.root.key: # 루트값 삭제 할 때
             #     self.child = self.root.right # child는 재조정 노드
             #     self.pchild = self.root # pchild는 chlid의 부모노드
             #     while self.child.left != None: # 재조정한 child의 오른쪽 노드에서 반복해서 가장작은값 찾기
